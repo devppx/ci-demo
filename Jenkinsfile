@@ -1,6 +1,7 @@
 pipeline {
-    node("docker-slave"){
     agent { dockerfile true }
+
+    node("docker-slave"){
     stages {
         stage('Test') {
             steps {
