@@ -1,13 +1,14 @@
 pipeline {
-    agent { dockerfile true }
+    agent { 
+        label 'docker-slave'
+        dockerfile true 
+    }
 
     stages {
-        node("docker-slave"){
-            stage('Test') {
-                steps {
-                    sh 'node --version'
-                    sh 'svn --version'
-                }
+        stage('Test') {
+            steps {
+                sh 'node --version'
+                sh 'svn --version'
             }
         }
     }
