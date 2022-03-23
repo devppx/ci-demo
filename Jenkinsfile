@@ -1,5 +1,5 @@
 pipeline {
-    node ("docker-slave")
+    node("docker-slave"){
     agent { dockerfile true }
     stages {
         stage('Test') {
@@ -8,5 +8,6 @@ pipeline {
                 sh 'svn --version'
             }
         }
+    }
     }
 }
